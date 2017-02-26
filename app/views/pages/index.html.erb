@@ -1,9 +1,20 @@
 <h1>Welcome to AngularJS</h1>
 
 <div ng-app="app">
+  {{ 1 + 1 }}
   <div ng-controller="stuffCtrl">
-    {{ 1 + 1 }}
-
     {{ message }}
+    <div>
+      <input ng-model="message" type="text">
+    </div>
+
+    <div id="reviews">
+      <h2>AngularJS Reviews</h2>
+
+      <li ng-repeat="review in reviews">{{ review }}</li>
+    </div>
   </div>
 </div>
+
+
+
