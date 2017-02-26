@@ -8,6 +8,10 @@
                       "I like React better"
                       ];
 
+    $scope.addReview = function(review){
+      $scope.reviews.push(review);
+    };
+
     window.scope = $scope;
   });
 }());
