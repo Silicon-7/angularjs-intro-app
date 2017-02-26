@@ -11,11 +11,23 @@
     <div id="reviews">
       <h2>AngularJS Reviews</h2>
 
-      <li ng-repeat="review in reviews">{{ review }}</li>
+      <div ng-repeat="review in reviews track by $index" ng-if="isPositive(review.text)">
+        <h4>{{ review.text }}</h4>
+        <h6>Rating: {{ review.rating }}</h6>
+        <h6>Reviewer: {{ review.reviewer }}</h6>
+      </div>
 
       <h3>Leave a Review of AngularJS</h3>
-      <input type="text" ng-model="newReview">
-      <button ng-click="addReview(newReview)">Add Review</button>
+      <div>
+        Review:  <input type="text" ng-model="newReviewText">
+      </div>
+      <div>
+        Rating: <input type="text" ng-model="newReviewRating">
+      </div>
+      <div>
+        Reviewer: <input type="text" ng-model="newReviewReviewer">
+      </div>
+      <button ng-click="addReview(newReviewText, newReviewRating, newReviewReviewer)">Add Review</button>
     </div>
   </div>
 </div>
